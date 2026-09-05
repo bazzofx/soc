@@ -23,7 +23,8 @@ all content shipped as JSON and searched client-side (MiniSearch).
   scenarios exercise each one, severity mix, and links to attack.mitre.org.
 - **Method & references**: the 10-step universal method, severity matrix, alert-state
   vocabulary and Appendices A–E.
-- Dark/light themes; keyboard navigation (←/→ between scenarios).
+- 🎌 **Cyber Samurai theme** (adapted from `reference/globalStyle.css`): near-black glass
+  surfaces, red accent + glow, samurai banner hero, severity badges; keyboard navigation (←/→).
 
 ## Project layout
 

@@ -45,30 +45,45 @@ export function HomePage() {
 
   return (
     <div>
-      {/* hero */}
-      <section className="mx-auto max-w-3xl pt-6 text-center sm:pt-10">
-        <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-          100 SOC Investigation Scenarios
-        </h1>
-        <p className="mt-2 text-sm sm:text-base" style={{ color: "var(--tx2)" }}>
-          Search and review the full playbook: phishing to ransomware, identity to web
-          attacks — with the MITRE ATT&amp;CK index, method and appendices.
-        </p>
-        <div className="mx-auto mt-6 max-w-2xl">
-          <SearchBox variant="big" autoFocus placeholder="Search every scenario… e.g. QR phish, LSASS, MFA fatigue, T1078" />
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5">
-            <span className="text-xs" style={{ color: "var(--tx3)" }}>Try:</span>
-            {EXAMPLES.map((ex) => (
-              <Link key={ex.q} to={`/scenarios?q=${encodeURIComponent(ex.q)}`} className="chip chip-hover">
-                {ex.label}
-              </Link>
-            ))}
+      {/* cyber hero */}
+      <section
+        // className="cyber-hero" 
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, rgba(7,7,9,0.9) 20%, rgba(7,7,9,0.35) 100%), url(theme/cyber_samurai_banner.jpg)",
+        }}
+      >
+        <div className="cyber-hero-inner mx-auto max-w-6xl">
+          <div className="max-w-2xl">
+            <p className="cyber-kicker mb-4">Security Operations · 2026 Edition</p>
+            <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl">
+              SOC Investigation Scenarios
+            </h1>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed sm:text-base" style={{ color: "var(--tx2)" }}>
+              Search and review the full blue-team playbook — phishing to ransomware,
+              identity to web attacks — with the MITRE ATT&amp;CK index, method and appendices.
+            </p>
+            <div className="mt-7 max-w-2xl">
+              <SearchBox
+                variant="big"
+                autoFocus
+                placeholder="Search every scenario… e.g. QR phish, LSASS, MFA fatigue, T1078"
+              />
+              <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                <span className="cyber-tag">Try</span>
+                {EXAMPLES.map((ex) => (
+                  <Link key={ex.q} to={`/scenarios?q=${encodeURIComponent(ex.q)}`} className="chip chip-hover">
+                    {ex.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* quick stats */}
-      <section className="mx-auto mt-8 grid max-w-4xl gap-3 sm:grid-cols-3">
+      <section className="mx-auto mt-6 grid max-w-4xl gap-3 sm:grid-cols-3">
         <div className="card flex items-center gap-4 p-4">
           <ProgressRing value={done / all.length} />
           <div>
@@ -78,7 +93,7 @@ export function HomePage() {
         </div>
         <div className="card p-4">
           <p className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--tx3)" }}>
-            Severity mix
+            Severity
           </p>
           <div className="mt-2 flex flex-col gap-1">
             {sevCounts.map(({ sev, n }) => (

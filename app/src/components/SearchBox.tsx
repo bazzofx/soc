@@ -109,7 +109,10 @@ export function SearchBox({ placeholder, autoFocus, variant = "inline", inputId 
         )}
       </form>
       {open && q.trim() && (
-        <div className="rise card absolute z-40 mt-2 max-h-96 w-full overflow-y-auto p-2 scrollbar-thin" style={{ boxShadow: "var(--shadow)" }}>
+        <div
+          className="rise card absolute z-40 mt-2 w-full overflow-y-auto p-2 scrollbar-thin"
+          style={{ boxShadow: "var(--shadow)", maxHeight: "min(34rem, 75vh)" }}
+        >
           {hits.length === 0 && !searching ? (
             <p className="px-3 py-3 text-sm" style={{ color: "var(--tx3)" }}>
               No matches for “{q}”. Press Enter to open the full results page.

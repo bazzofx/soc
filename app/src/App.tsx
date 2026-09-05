@@ -6,6 +6,7 @@ import { MethodPage } from "./pages/MethodPage";
 import { MitrePage } from "./pages/MitrePage";
 import { ProgressPage } from "./pages/ProgressPage";
 import { ReferencesPage } from "./pages/ReferencesPage";
+import { ReportPage } from "./pages/ReportPage";
 import { ScenarioPage } from "./pages/ScenarioPage";
 
 export function App() {
@@ -19,6 +20,7 @@ export function App() {
           <Route path="mitre" element={<MitrePage />} />
           <Route path="method" element={<MethodPage />} />
           <Route path="references" element={<ReferencesPage />} />
+          <Route path="report" element={<ReportPage />} />
           <Route path="progress" element={<ProgressPage />} />
           <Route path="*" element={<HomePage />} />
         </Route>

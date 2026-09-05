@@ -81,3 +81,48 @@ export async function copyMarkdown(sc: Scenario, categories: Category[]): Promis
     return ok;
   }
 }
+
+// ---------------------------------------------------------------------------
+// Incident documentation template (Appendix D)
+// ---------------------------------------------------------------------------
+
+export interface DocField {
+  label: string;
+  text: string; // hint describing what belongs in the field
+}
+
+/** Blank fill-in Markdown built from the Appendix D field list. */
+export function incidentTemplateMarkdown(fields: DocField[]): string {
+  const lines = [
+    "# SOC Incident Documentation",
+    "",
+    "> Template from *100 SOC Investigation Scenarios* — Appendix D.",
+    "> Fill each section below; delete the hint lines (starting with `>`) as you go.",
+    "",
+  ];
+  for (const f of fields) {
+    lines.push(`## ${f.label}`, "");
+    if (f.text) {
+      lines.push(`> Hint: ${f.text}`, "");
+    }
+    lines.push("_Write here…_", "", "", "");
+  }
+  return lines.join("\n");
+}
+
+/** Download helper for text files (markdown). */
+export function downloadTextFile(
+  filename: string,
+  text: string,
+  mime = "text/markdown;charset=utf-8",
+): void {
+  const blob = new Blob([text], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}

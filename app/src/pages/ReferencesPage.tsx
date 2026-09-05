@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ErrorBox, Loading } from "../components/ui";
+import { IncidentDocBuilder } from "../components/IncidentDocBuilder";
 import { useReferences } from "../lib/data";
 import type { References } from "../types";
 
@@ -62,7 +64,30 @@ export function ReferencesPage() {
           </ol>
         )}
         {tab === "appendixC" && <LabeledItems items={data.appendixC} />}
-        {tab === "appendixD" && <LabeledItems items={data.appendixD} />}
+        {tab === "appendixD" && (
+          <>
+            <div
+              className="flex flex-wrap items-center justify-between gap-3 rounded-xl border px-4 py-3"
+              style={{ borderColor: "rgba(255, 46, 59, 0.3)", background: "var(--accent-dim)" }}
+            >
+              <p className="text-sm" style={{ color: "var(--tx2)" }}>
+                Prefer guided input fields with a buildable timeline? Use the full report form.
+              </p>
+              <Link className="btn btn--accent" to="/report">
+                Open full report form →
+              </Link>
+            </div>
+            <IncidentDocBuilder items={data.appendixD} />
+            <details className="card px-4 py-3 text-sm" style={{ borderColor: "var(--line)" }}>
+              <summary className="cursor-pointer font-semibold" style={{ color: "var(--tx2)" }}>
+                Show source appendix text
+              </summary>
+              <div className="mt-3">
+                <LabeledItems items={data.appendixD} />
+              </div>
+            </details>
+          </>
+        )}
         {tab === "appendixE" && (
           <div className="flex flex-col gap-3">
             {data.appendixE.map((p, i) => (

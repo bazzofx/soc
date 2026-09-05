@@ -4,10 +4,10 @@ import type { Category, Scenario, Severity } from "../types";
 export const SEVERITY_ORDER: Severity[] = ["Critical", "High", "Medium", "Low"];
 
 export const SEVERITY_COLOR: Record<Severity, string> = {
-  Critical: "#f87171",
-  High: "#fb923c",
-  Medium: "#fde047",
-  Low: "#94a3b8",
+  Critical: "#ff2e3b",
+  High: "#f59e0b",
+  Medium: "#facc15",
+  Low: "#6f7385",
 };
 
 /** map technique id (T1566.002) to an attack.mitre.org URL */
