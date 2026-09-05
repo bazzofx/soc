@@ -30,20 +30,6 @@ function StatusControl({ code }: { code: string }) {
   );
 }
 
-function NotesEditor({ code }: { code: string }) {
-  const note = useReview((s) => s.notes[code] ?? "");
-  const setNote = useReview((s) => s.setNote);
-  return (
-    <textarea
-      className="field min-h-20 text-xs leading-relaxed"
-      placeholder="Personal notes (auto-saved locally)…"
-      value={note}
-      onChange={(e) => setNote(code, e.target.value)}
-      aria-label="Notes"
-    />
-  );
-}
-
 export function ScenarioDetailView({
   scenario,
   categories,
@@ -73,9 +59,6 @@ export function ScenarioDetailView({
           <span style={{ color: "var(--tx3)" }}>/</span>
           <span style={{ color: "var(--tx3)" }}>
             Scenario {scenario.code}
-            {scenario.pages[0] !== scenario.pages[1] && (
-              <span className="ml-1 text-xs">(PDF p.{scenario.pages[0]}–{scenario.pages[1]})</span>
-            )}
           </span>
         </div>
         <div className="flex items-center gap-1.5">
@@ -251,12 +234,6 @@ export function ScenarioDetailView({
             ) : null,
           )}
         </div>
-      </section>
-
-      {/* notes */}
-      <section className="card p-5">
-        <h2 className="h2 mb-2">My notes</h2>
-        <NotesEditor code={scenario.code} />
       </section>
     </article>
   );

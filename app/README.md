@@ -11,14 +11,15 @@ all content shipped as JSON and searched client-side (MiniSearch).
 ## Features
 
 - **Instant full-text search** over all 100 scenarios (titles, steps, techniques, entities,
-  alert sources…) with ranking, snippets and `<mark>` highlighting — press `/` anywhere.
-- **Faceted browsing**: filter by category, severity, MITRE technique, review status, notes.
+  alert sources…) with ranking, snippets and `<mark>` highlighting — press `F` for the
+  search popup, or use the header search box.
+- **Faceted browsing**: filter by category, severity, MITRE technique, review status.
   Filter/query state lives in the URL, so results are shareable and back/forward works.
 - **Structured detail pages**: initial alert & objective, numbered step-by-step
   investigation, four pivots, the two-column *decision evidence* comparison, and the
   containment/escalation/closure block — with “copy as Markdown” and print.
-- **Review workflow**: mark scenarios Unreviewed / In progress / Reviewed / Flagged, keep
-  notes per scenario, track progress per category, export/import state as JSON.
+- **Review workflow**: mark scenarios Unreviewed / In progress / Reviewed / Flagged,
+  track progress per category, export/import state as JSON.
 - **MITRE ATT&CK index** (`/mitre`): all techniques referenced by the playbook, which
   scenarios exercise each one, severity mix, and links to attack.mitre.org.
 - **Method & references**: the 10-step universal method, severity matrix, alert-state
@@ -60,9 +61,9 @@ hash-based) or host on Netlify/Vercel/GitHub Pages. All data stays local to the 
 
 ## Keeping state
 
-Review statuses and notes are stored in IndexedDB **in the browser** under
-`soc-review-state-v1`. Use **Progress → Export state** to back up, and **Import state** to
-restore on another machine/browser.
+Review statuses are stored in IndexedDB **in the browser** under `soc-review-state-v1`.
+Use **Progress → Export state** to back up, and **Import state** to restore on another
+machine/browser.
 
 ## Regenerating content
 

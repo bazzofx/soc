@@ -10,7 +10,6 @@ export function ProgressPage() {
   const scenarios = useScenarios();
   const categories = useCategories();
   const status = useReview((s) => s.status);
-  const notes = useReview((s) => s.notes);
   const importState = useReview((s) => s.importState);
   const resetAll = useReview((s) => s.resetAll);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -28,7 +27,6 @@ export function ProgressPage() {
     return all.filter((s) => (status[s.code] ?? "unreviewed") === st).length;
   }
   const done = countStatus("reviewed") + countStatus("flagged");
-  const withNotes = all.filter((s) => (notes[s.code] ?? "").trim()).length;
 
   async function onFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -44,12 +42,13 @@ export function ProgressPage() {
   }
 
   function exportNow() {
-    downloadReview({ version: 1, status, notes });
+    // notes field kept empty for compatibility with older state exports
+    downloadReview({ version: 1, status, notes: {} });
     setMsg("Exported soc-review-state.json — keep it as a backup.");
   }
 
   function reset() {
-    if (window.confirm("Clear ALL review statuses and notes for the 100 scenarios? This cannot be undone.")) {
+    if (window.confirm("Clear ALL review statuses for the 100 scenarios? This cannot be undone.")) {
       resetAll();
       setMsg("Review state cleared.");
     }
@@ -87,9 +86,6 @@ export function ProgressPage() {
             {done}<span className="text-base font-normal" style={{ color: "var(--tx3)" }}> / {all.length}</span>
           </p>
           <p className="text-sm" style={{ color: "var(--tx2)" }}>reviewed or flagged</p>
-          <p className="mt-1 text-xs" style={{ color: "var(--tx3)" }}>
-            {withNotes} scenario(s) with notes
-          </p>
         </div>
         <div className="ml-auto flex flex-wrap gap-2">
           {statusesAll.map((st) => (

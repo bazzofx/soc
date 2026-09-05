@@ -67,7 +67,7 @@ export function HomePage() {
               <SearchBox
                 variant="big"
                 autoFocus
-                placeholder="Search every scenario… e.g. QR phish, LSASS, MFA fatigue, T1078"
+                placeholder="Press F to fSearch every scenario… e.g. QR phish, LSASS, MFA fatigue, T1078"
               />
               <div className="mt-3 flex flex-wrap items-center gap-1.5">
                 <span className="cyber-tag">Try</span>
@@ -83,7 +83,7 @@ export function HomePage() {
       </section>
 
       {/* quick stats */}
-      <section className="mx-auto mt-6 grid max-w-4xl gap-3 sm:grid-cols-3">
+      {/* <section className="mx-auto mt-6 grid max-w-4xl gap-3 sm:grid-cols-3">
         <div className="card flex items-center gap-4 p-4">
           <ProgressRing value={done / all.length} />
           <div>
@@ -121,7 +121,7 @@ export function HomePage() {
             🎲 Random scenario
           </button>
         </div>
-      </section>
+      </section> */}
 
       {/* categories */}
       <section className="mt-10">

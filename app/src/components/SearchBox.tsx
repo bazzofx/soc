@@ -11,9 +11,11 @@ interface Props {
   autoFocus?: boolean;
   variant?: "big" | "inline";
   inputId?: string;
+  /** called after navigating to a result or the results page (e.g. close a modal) */
+  onPick?: () => void;
 }
 
-export function SearchBox({ placeholder, autoFocus, variant = "inline", inputId }: Props) {
+export function SearchBox({ placeholder, autoFocus, variant = "inline", inputId, onPick }: Props) {
   const nav = useNavigate();
   const scenarios = useScenarios();
   const categories = useCategories();
@@ -65,6 +67,7 @@ export function SearchBox({ placeholder, autoFocus, variant = "inline", inputId 
     setOpen(false);
     setQ("");
     nav(`/scenarios/${String(num).padStart(3, "0")}`);
+    onPick?.();
   }
 
   function submit(e: React.FormEvent) {
@@ -75,6 +78,7 @@ export function SearchBox({ placeholder, autoFocus, variant = "inline", inputId 
     } else {
       nav(`/scenarios?q=${encodeURIComponent(q)}`);
     }
+    onPick?.();
   }
 
   const big = variant === "big";

@@ -16,13 +16,11 @@ export function BrowsePage() {
   const scenarios = useScenarios();
   const categories = useCategories();
   const statusMap = useReview((s) => s.status);
-  const notesMap = useReview((s) => s.notes);
   const [techFilter, setTechFilter] = useState("");
 
   const q = params.get("q") ?? "";
   const sel = (k: FilterKey): string[] =>
     (params.get(k) ?? "").split(",").filter(Boolean);
-  const notesOn = params.get("notes") === "1";
 
   function setParam<K extends string>(key: string, value: K | K[] | null) {
     const next = new URLSearchParams(params);
@@ -46,7 +44,6 @@ export function BrowsePage() {
 
   const all: Scenario[] = scenarios.data?.scenarios ?? [];
   const cats: Category[] = categories.data?.categories ?? [];
-  const notesOnlyActive = notesOn;
 
   const techniques = useTechniqueList(all);
   const shownTechniques = techniques
@@ -96,7 +93,6 @@ export function BrowsePage() {
       if (f.sev.length && !f.sev.includes(s.severity)) return false;
       if (f.tech.length && !s.mitreFocus.some((t) => f.tech.includes(t.id))) return false;
       if (f.status.length && !f.status.includes(statusMap[s.code] ?? "unreviewed")) return false;
-      if (notesOnlyActive && !(notesMap[s.code] ?? "").trim()) return false;
       return true;
     });
     if (!q.trim()) {
@@ -109,7 +105,7 @@ export function BrowsePage() {
   })();
 
   const activeFilterCount =
-    sel("cat").length + sel("sev").length + sel("tech").length + sel("status").length + (notesOn ? 1 : 0);
+    sel("cat").length + sel("sev").length + sel("tech").length + sel("status").length;
 
   if (scenarios.error || categories.error) {
     return <ErrorBox error={scenarios.error ?? categories.error!} />;
@@ -180,11 +176,6 @@ export function BrowsePage() {
                 onToggle={() => toggle("status", st)}
               />
             ))}
-            <CheckRow
-              checked={notesOn}
-              label="Has notes"
-              onToggle={() => setParam("notes", notesOn ? null : "1")}
-            />
           </FilterGroup>
 
           <FilterGroup label={`MITRE technique (${sel("tech").length})`}>

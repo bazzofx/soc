@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { SearchBox } from "./SearchBox";
 
@@ -12,20 +12,39 @@ const NAV = [
   { to: "/progress", label: "Progress" },
 ];
 
+function isTyping(el: EventTarget | null): boolean {
+  if (!(el instanceof HTMLElement)) return false;
+  const tag = el.tagName;
+  return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || el.isContentEditable;
+}
+
 export function Layout() {
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  // keyboard: F toggles the search modal, Escape closes it
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      const tag = (e.target as HTMLElement | null)?.tagName;
-      if (e.key === "/" && tag !== "INPUT" && tag !== "TEXTAREA") {
+      if (e.key === "Escape") {
+        setSearchOpen(false);
+        return;
+      }
+      const k = e.key.toLowerCase();
+      if (k === "f" && !isTyping(e.target) && !e.ctrlKey && !e.metaKey && !e.altKey) {
         e.preventDefault();
-        const el = document.getElementById("global-search") as HTMLInputElement | null;
-        el?.focus();
-        el?.select();
+        setSearchOpen((open) => !open);
       }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  // lock body scroll while the modal is open
+  useEffect(() => {
+    document.body.style.overflow = searchOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [searchOpen]);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -99,7 +118,7 @@ export function Layout() {
           </nav>
 
           <div className="ml-auto min-w-0 flex-1 sm:max-w-sm lg:max-w-md">
-            <SearchBox inputId="global-search" placeholder="Search Attack Scenarios…" />
+            <SearchBox inputId="global-search" placeholder="Search Attack Scenarios… (F)" />
           </div>
 
           <span
@@ -111,7 +130,7 @@ export function Layout() {
               className="inline-block h-1.5 w-1.5 animate-pulse rounded-full"
               style={{ background: "var(--accent)", boxShadow: "0 0 8px var(--accent-glow)" }}
             />
-            Local
+            ALERT
           </span>
         </div>
       </header>
@@ -123,9 +142,48 @@ export function Layout() {
       <footer className="border-t py-4" style={{ borderColor: "var(--line)" }}>
         <p className="mx-auto w-full max-w-7xl px-4 text-center text-xs" style={{ color: "var(--tx3)" }}>
           SOC Scenario Reviewer — Cyber Samurai theme · built from “100 SOC Investigation
-          Scenarios · 2026 Edition”. Press <span className="kbd">/</span> to search.
+          Scenarios · 2026 Edition”. Press <span className="kbd">F</span> to search.
         </p>
       </footer>
+
+      {/* search modal (F key) */}
+      {searchOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto px-4 pt-[12vh] pb-10"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Search scenarios"
+        >
+          <div
+            className="absolute inset-0"
+            style={{ background: "rgba(4, 4, 6, 0.78)", backdropFilter: "blur(6px)" }}
+            onClick={() => setSearchOpen(false)}
+          />
+          <div className="rise card relative z-10 w-full max-w-2xl p-4" style={{ boxShadow: "var(--shadow)" }}>
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <p className="cyber-kicker" style={{ fontSize: "0.62rem", letterSpacing: "0.22em" }}>
+                Search scenarios
+              </p>
+              <button
+                className="btn btn--ghost px-2 py-0.5 text-xs"
+                onClick={() => setSearchOpen(false)}
+              >
+                Esc ✕
+              </button>
+            </div>
+            <SearchBox
+              variant="big"
+              autoFocus
+              inputId="modal-search"
+              onPick={() => setSearchOpen(false)}
+              placeholder="Search Attack Scenarios… type to filter, Enter opens the top result"
+            />
+            <p className="mt-2 text-center text-[0.68rem]" style={{ color: "var(--tx3)" }}>
+              Press <span className="kbd">F</span> again or <span className="kbd">Esc</span> to close
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

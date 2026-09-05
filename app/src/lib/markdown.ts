@@ -61,7 +61,7 @@ export function scenarioToMarkdown(sc: Scenario, categories: Category[]): string
     if (text) lines.push(`**${label}:** ${mdEscape(text)}`);
   }
   lines.push("");
-  lines.push(`_Source: ${sc.title} (scenario ${sc.code}), PDF pages ${sc.pages.join("–")}._`);
+  lines.push(`_Source: ${sc.title} (scenario ${sc.code})._`);
   return lines.join("\n");
 }
 
