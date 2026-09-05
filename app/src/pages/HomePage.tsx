@@ -81,7 +81,7 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
+{/* ------------------------------------ CURRENTLY SECTION IS DISABLE ------------------------------------------ START */}
       {/* quick stats */}
       {/* <section className="mx-auto mt-6 grid max-w-4xl gap-3 sm:grid-cols-3">
         <div className="card flex items-center gap-4 p-4">
@@ -122,7 +122,7 @@ export function HomePage() {
           </button>
         </div>
       </section> */}
-
+{/* ------------------------------------ CURRENTLY SECTION IS DISABLE ------------------------------------------ END */}
       {/* categories */}
       <section className="mt-10">
         <div className="mb-3 flex items-baseline justify-between">
