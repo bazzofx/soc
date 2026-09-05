@@ -99,7 +99,7 @@ export function Layout() {
           </nav>
 
           <div className="ml-auto min-w-0 flex-1 sm:max-w-sm lg:max-w-md">
-            <SearchBox inputId="global-search" placeholder="Search 100 scenarios… ( / )" />
+            <SearchBox inputId="global-search" placeholder="Search Attack Scenarios…" />
           </div>
 
           <span

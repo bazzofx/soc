@@ -31,7 +31,12 @@ const EXTRA_CSS = `
   /* +20px top padding for each report section */
   .glass-card { padding: 44px 24px 24px; }
   /* section headers enlarged by 5px (base 18px -> 23px) */
-  .glass-card .card-title { font-size: 23px; }
+  .glass-card .card-title { font-size: 18px; }
+  /* main section headers (Overview / Narrative / Timeline / Impact ...) only */
+  .glass-card > h3.card-title:first-child { font-size: 30px; }
+  /* extra top spacing before each repeated segment heading (e.g. the impact
+     fields Containment / Recovery, Business / Data impact, ...) */
+  .glass-card > * + h3.card-title { padding-top: 35px; }
   h3.section-title { margin: 26px 0 10px; }
   p.doc-text { color: var(--text-primary); line-height: 1.75; }
   .missing { color: var(--text-muted); font-style: italic; }
@@ -168,7 +173,7 @@ ${EXTRA_CSS}
   </div>
 
   <div class="glass-card">
-    <h3 class="card-title">Impact, containment &amp; closure</h3>
+    <h3 class="card-title">Impact Containment &amp; closure</h3>
     ${impact}
   </div>
 
