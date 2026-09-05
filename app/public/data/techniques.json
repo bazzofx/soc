@@ -1,0 +1,1093 @@
+{
+ "techniques": [
+  {
+   "id": "T1003.001",
+   "name": "OS Credential Dumping: LSASS Memory",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    35
+   ],
+   "categories": [
+    "credential-abuse"
+   ]
+  },
+  {
+   "id": "T1021.001",
+   "name": "Remote Services: RDP",
+   "count": 1,
+   "severities": [
+    "Critical"
+   ],
+   "scenarioNums": [
+    68
+   ],
+   "categories": [
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1021.002",
+   "name": "SMB/Windows Admin Shares",
+   "count": 2,
+   "severities": [
+    "Critical"
+   ],
+   "scenarioNums": [
+    66,
+    67
+   ],
+   "categories": [
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1021.006",
+   "name": "Remote Services: Windows Remote Management",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    59
+   ],
+   "categories": [
+    "powershell"
+   ]
+  },
+  {
+   "id": "T1027",
+   "name": "Obfuscated Files or Information",
+   "count": 3,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    53,
+    55,
+    61
+   ],
+   "categories": [
+    "powershell"
+   ]
+  },
+  {
+   "id": "T1041",
+   "name": "Exfiltration Over C2 Channel",
+   "count": 2,
+   "severities": [
+    "High",
+    "Medium"
+   ],
+   "scenarioNums": [
+    17,
+    62
+   ],
+   "categories": [
+    "malware",
+    "powershell"
+   ]
+  },
+  {
+   "id": "T1048",
+   "name": "Exfiltration Over Alternative Protocol",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    42
+   ],
+   "categories": [
+    "vpn"
+   ]
+  },
+  {
+   "id": "T1052",
+   "name": "Exfiltration Over Physical Medium",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    85
+   ],
+   "categories": [
+    "insider"
+   ]
+  },
+  {
+   "id": "T1053.005",
+   "name": "Scheduled Task/Job: Scheduled Task",
+   "count": 2,
+   "severities": [
+    "High",
+    "Medium"
+   ],
+   "scenarioNums": [
+    19,
+    58
+   ],
+   "categories": [
+    "malware",
+    "powershell"
+   ]
+  },
+  {
+   "id": "T1056",
+   "name": "Input Capture",
+   "count": 2,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    2,
+    4
+   ],
+   "categories": [
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1059",
+   "name": "Command and Scripting Interpreter",
+   "count": 3,
+   "severities": [
+    "High",
+    "Medium"
+   ],
+   "scenarioNums": [
+    14,
+    15,
+    100
+   ],
+   "categories": [
+    "malware",
+    "web"
+   ]
+  },
+  {
+   "id": "T1059.001",
+   "name": "PowerShell",
+   "count": 7,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    53,
+    54,
+    55,
+    56,
+    58,
+    60,
+    61
+   ],
+   "categories": [
+    "powershell"
+   ]
+  },
+  {
+   "id": "T1069",
+   "name": "Permission Groups Discovery",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    79
+   ],
+   "categories": [
+    "cloud"
+   ]
+  },
+  {
+   "id": "T1071",
+   "name": "Application Layer Protocol",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    24
+   ],
+   "categories": [
+    "malware"
+   ]
+  },
+  {
+   "id": "T1071.001",
+   "name": "Web Protocols",
+   "count": 2,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    47,
+    51
+   ],
+   "categories": [
+    "dns"
+   ]
+  },
+  {
+   "id": "T1071.004",
+   "name": "Application Layer Protocol: DNS",
+   "count": 3,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    46,
+    50,
+    52
+   ],
+   "categories": [
+    "dns"
+   ]
+  },
+  {
+   "id": "T1078",
+   "name": "Valid Accounts",
+   "count": 14,
+   "severities": [
+    "Medium",
+    "High",
+    "Critical"
+   ],
+   "scenarioNums": [
+    1,
+    5,
+    6,
+    11,
+    26,
+    27,
+    32,
+    33,
+    36,
+    37,
+    41,
+    43,
+    69,
+    97
+   ],
+   "categories": [
+    "credential-abuse",
+    "phishing",
+    "ransomware",
+    "vpn",
+    "web"
+   ]
+  },
+  {
+   "id": "T1078.002",
+   "name": "Valid Accounts: Domain Accounts",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    31
+   ],
+   "categories": [
+    "credential-abuse"
+   ]
+  },
+  {
+   "id": "T1078.004",
+   "name": "Valid Accounts: Cloud Accounts",
+   "count": 3,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    75,
+    80,
+    83
+   ],
+   "categories": [
+    "cloud"
+   ]
+  },
+  {
+   "id": "T1090",
+   "name": "Proxy",
+   "count": 2,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    44,
+    52
+   ],
+   "categories": [
+    "dns",
+    "vpn"
+   ]
+  },
+  {
+   "id": "T1091",
+   "name": "Replication Through Removable Media",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    18
+   ],
+   "categories": [
+    "malware"
+   ]
+  },
+  {
+   "id": "T1098",
+   "name": "Account Manipulation",
+   "count": 6,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    3,
+    29,
+    30,
+    76,
+    78,
+    79
+   ],
+   "categories": [
+    "cloud",
+    "credential-abuse",
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1098.001",
+   "name": "Account Manipulation: Additional Cloud Credentials",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    82
+   ],
+   "categories": [
+    "cloud"
+   ]
+  },
+  {
+   "id": "T1098.005",
+   "name": "Device Registration",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    8
+   ],
+   "categories": [
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1102",
+   "name": "Web Service",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    50
+   ],
+   "categories": [
+    "dns"
+   ]
+  },
+  {
+   "id": "T1105",
+   "name": "Ingress Tool Transfer",
+   "count": 3,
+   "severities": [
+    "High",
+    "Medium"
+   ],
+   "scenarioNums": [
+    13,
+    54,
+    98
+   ],
+   "categories": [
+    "malware",
+    "powershell",
+    "web"
+   ]
+  },
+  {
+   "id": "T1110",
+   "name": "Brute Force",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    26
+   ],
+   "categories": [
+    "credential-abuse"
+   ]
+  },
+  {
+   "id": "T1110.003",
+   "name": "Password Spraying",
+   "count": 2,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    25,
+    39
+   ],
+   "categories": [
+    "credential-abuse",
+    "vpn"
+   ]
+  },
+  {
+   "id": "T1110.004",
+   "name": "Credential Stuffing",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    96
+   ],
+   "categories": [
+    "web"
+   ]
+  },
+  {
+   "id": "T1114",
+   "name": "Email Collection",
+   "count": 3,
+   "severities": [
+    "High",
+    "Medium"
+   ],
+   "scenarioNums": [
+    30,
+    78,
+    89
+   ],
+   "categories": [
+    "cloud",
+    "credential-abuse",
+    "insider"
+   ]
+  },
+  {
+   "id": "T1133",
+   "name": "External Remote Services",
+   "count": 7,
+   "severities": [
+    "Medium",
+    "High"
+   ],
+   "scenarioNums": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    43,
+    44
+   ],
+   "categories": [
+    "vpn"
+   ]
+  },
+  {
+   "id": "T1140",
+   "name": "Deobfuscate/Decode Files or Information",
+   "count": 2,
+   "severities": [
+    "High",
+    "Medium"
+   ],
+   "scenarioNums": [
+    23,
+    56
+   ],
+   "categories": [
+    "malware",
+    "powershell"
+   ]
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "count": 5,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    93,
+    95,
+    98,
+    99,
+    100
+   ],
+   "categories": [
+    "web"
+   ]
+  },
+  {
+   "id": "T1204",
+   "name": "User Execution",
+   "count": 2,
+   "severities": [
+    "Medium",
+    "High"
+   ],
+   "scenarioNums": [
+    12,
+    13
+   ],
+   "categories": [
+    "malware",
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1204.002",
+   "name": "Malicious File",
+   "count": 6,
+   "severities": [
+    "Medium",
+    "High"
+   ],
+   "scenarioNums": [
+    9,
+    14,
+    15,
+    23,
+    51,
+    60
+   ],
+   "categories": [
+    "dns",
+    "malware",
+    "phishing",
+    "powershell"
+   ]
+  },
+  {
+   "id": "T1213",
+   "name": "Data from Information Repositories",
+   "count": 2,
+   "severities": [
+    "Medium",
+    "High"
+   ],
+   "scenarioNums": [
+    87,
+    88
+   ],
+   "categories": [
+    "insider"
+   ]
+  },
+  {
+   "id": "T1218",
+   "name": "System Binary Proxy Execution",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    16
+   ],
+   "categories": [
+    "malware"
+   ]
+  },
+  {
+   "id": "T1218.005",
+   "name": "System Binary Proxy Execution: Mshta",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    22
+   ],
+   "categories": [
+    "malware"
+   ]
+  },
+  {
+   "id": "T1222",
+   "name": "File and Directory Permissions Modification",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    81
+   ],
+   "categories": [
+    "cloud"
+   ]
+  },
+  {
+   "id": "T1484",
+   "name": "Domain or Tenant Policy Modification",
+   "count": 2,
+   "severities": [
+    "High",
+    "Critical"
+   ],
+   "scenarioNums": [
+    33,
+    69
+   ],
+   "categories": [
+    "credential-abuse",
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1486",
+   "name": "Data Encrypted for Impact",
+   "count": 6,
+   "severities": [
+    "Critical"
+   ],
+   "scenarioNums": [
+    63,
+    66,
+    68,
+    72,
+    73,
+    74
+   ],
+   "categories": [
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1490",
+   "name": "Inhibit System Recovery",
+   "count": 3,
+   "severities": [
+    "High",
+    "Critical"
+   ],
+   "scenarioNums": [
+    64,
+    65,
+    73
+   ],
+   "categories": [
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1491",
+   "name": "Defacement",
+   "count": 1,
+   "severities": [
+    "Critical"
+   ],
+   "scenarioNums": [
+    74
+   ],
+   "categories": [
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1505.003",
+   "name": "Server Software Component: Web Shell",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    94
+   ],
+   "categories": [
+    "web"
+   ]
+  },
+  {
+   "id": "T1528",
+   "name": "Steal Application Access Token",
+   "count": 2,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    3,
+    76
+   ],
+   "categories": [
+    "cloud",
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1530",
+   "name": "Data from Cloud Storage",
+   "count": 4,
+   "severities": [
+    "Critical",
+    "High",
+    "Medium"
+   ],
+   "scenarioNums": [
+    70,
+    77,
+    81,
+    92
+   ],
+   "categories": [
+    "cloud",
+    "insider",
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1534",
+   "name": "Internal Spearphishing",
+   "count": 2,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    6,
+    12
+   ],
+   "categories": [
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1539",
+   "name": "Steal Web Session Cookie",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    84
+   ],
+   "categories": [
+    "cloud"
+   ]
+  },
+  {
+   "id": "T1543.003",
+   "name": "Create or Modify System Process: Windows Service",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    20
+   ],
+   "categories": [
+    "malware"
+   ]
+  },
+  {
+   "id": "T1547",
+   "name": "Boot or Logon Autostart Execution",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    24
+   ],
+   "categories": [
+    "malware"
+   ]
+  },
+  {
+   "id": "T1550",
+   "name": "Use Alternate Authentication Material",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    84
+   ],
+   "categories": [
+    "cloud"
+   ]
+  },
+  {
+   "id": "T1555",
+   "name": "Credentials from Password Stores",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    17
+   ],
+   "categories": [
+    "malware"
+   ]
+  },
+  {
+   "id": "T1558.003",
+   "name": "Steal or Forge Kerberos Tickets: Kerberoasting",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    34
+   ],
+   "categories": [
+    "credential-abuse"
+   ]
+  },
+  {
+   "id": "T1560",
+   "name": "Archive Collected Data",
+   "count": 3,
+   "severities": [
+    "Medium",
+    "Critical"
+   ],
+   "scenarioNums": [
+    62,
+    70,
+    90
+   ],
+   "categories": [
+    "insider",
+    "powershell",
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1562.001",
+   "name": "Impair Defenses: Disable or Modify Tools",
+   "count": 3,
+   "severities": [
+    "Medium",
+    "High"
+   ],
+   "scenarioNums": [
+    57,
+    65,
+    91
+   ],
+   "categories": [
+    "insider",
+    "powershell",
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1562.009",
+   "name": "Impair Defenses: Safe Mode Boot",
+   "count": 1,
+   "severities": [
+    "Critical"
+   ],
+   "scenarioNums": [
+    72
+   ],
+   "categories": [
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1566",
+   "name": "Phishing",
+   "count": 3,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    5,
+    10,
+    11
+   ],
+   "categories": [
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1566.001",
+   "name": "Spearphishing Attachment",
+   "count": 2,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    2,
+    9
+   ],
+   "categories": [
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1566.002",
+   "name": "Spearphishing Link",
+   "count": 4,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    1,
+    4,
+    7,
+    8
+   ],
+   "categories": [
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1567.002",
+   "name": "Exfiltration to Cloud Storage",
+   "count": 2,
+   "severities": [
+    "High",
+    "Medium"
+   ],
+   "scenarioNums": [
+    71,
+    86
+   ],
+   "categories": [
+    "insider",
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1568",
+   "name": "Dynamic Resolution",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    48
+   ],
+   "categories": [
+    "dns"
+   ]
+  },
+  {
+   "id": "T1568.002",
+   "name": "Dynamic Resolution: Domain Generation Algorithms",
+   "count": 2,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    45,
+    49
+   ],
+   "categories": [
+    "dns"
+   ]
+  },
+  {
+   "id": "T1569.002",
+   "name": "System Services: Service Execution",
+   "count": 1,
+   "severities": [
+    "Critical"
+   ],
+   "scenarioNums": [
+    67
+   ],
+   "categories": [
+    "ransomware"
+   ]
+  },
+  {
+   "id": "T1574.002",
+   "name": "Hijack Execution Flow: DLL Side-Loading",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    21
+   ],
+   "categories": [
+    "malware"
+   ]
+  },
+  {
+   "id": "T1583.001",
+   "name": "Acquire Infrastructure: Domains",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    47
+   ],
+   "categories": [
+    "dns"
+   ]
+  },
+  {
+   "id": "T1589",
+   "name": "Gather Victim Identity Information",
+   "count": 1,
+   "severities": [
+    "High"
+   ],
+   "scenarioNums": [
+    36
+   ],
+   "categories": [
+    "credential-abuse"
+   ]
+  },
+  {
+   "id": "T1621",
+   "name": "Multi-Factor Authentication Request Generation",
+   "count": 2,
+   "severities": [
+    "Medium",
+    "High"
+   ],
+   "scenarioNums": [
+    7,
+    28
+   ],
+   "categories": [
+    "credential-abuse",
+    "phishing"
+   ]
+  },
+  {
+   "id": "T1656",
+   "name": "Impersonation",
+   "count": 1,
+   "severities": [
+    "Medium"
+   ],
+   "scenarioNums": [
+    10
+   ],
+   "categories": [
+    "phishing"
+   ]
+  }
+ ]
+}

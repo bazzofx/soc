@@ -1,0 +1,236 @@
+{
+ "method": [
+  "Validate the alert Confirm the alert’s raw evidence, time, entities, detection logic and control action. “Blocked”, “detected”, “allowed”, “quarantined” and “failed” mean different things.",
+  "Build the timeline Anchor the alert time, then look backward for initial access and forward for execution, persistence, privilege, lateral movement, collection, C2, exfiltration and impact.",
+  "Scope the entities Identify every related user, host, IP, domain, file, process, application, session, mailbox, cloud resource and business service.",
+  "Correlate independent evidence Do not rely on one telemetry source. Combine identity, endpoint, network, email, cloud, application and business records so one source can validate or contradict another.",
+  "Test competing hypotheses Ask what evidence would exist if the event were malicious, and what evidence would exist if it were benign. Keep both hypotheses alive until the data meaningfully favours one.",
+  "Determine attack progression Map observed behaviour to attacker objectives. Separate capability or attempted action from confirmed execution and impact.",
+  "Contain proportionately Contain the specific risk that is supported: message purge, token revocation, password reset, host isolation, domain block, privilege removal, session termination, vulnerable service mitigation or broader incident activation.",
+  "Preserve evidence and business context Record raw logs, identifiers, timestamps, query logic, affected data/services and change/ticket context. This makes the investigation repeatable and auditable.",
+  "Define closure criteria State what must be true before closure: no active persistence, compromised identities recovered, malicious infrastructure blocked, affected assets remediated, scope completed and residual monitoring assigned.",
+  "Improve detection Every completed investigation should create value: rule tuning, new correlation logic, logging gaps, playbook improvements, threat-hunting ideas or control changes."
+ ],
+ "severityMatrix": [
+  {
+   "severity": "Critical",
+   "meaning": "Active or widespread compromise; material business impact possible",
+   "examples": "Ransomware spreading; privileged tenant/domain compromise; active exfiltration",
+   "posture": "Immediate incident command, containment and senior escalation"
+  },
+  {
+   "severity": "High",
+   "meaning": "Confirmed compromise or high-confidence attacker activity with meaningful scope",
+   "examples": "Successful account takeover; malware execution with C2; web shell",
+   "posture": "Rapid containment, scoping and incident escalation"
+  },
+  {
+   "severity": "Medium",
+   "meaning": "Suspicious activity requiring investigation; impact not yet established",
+   "examples": "Blocked malware with uncertain execution; risky sign-in; suspicious DNS",
+   "posture": "Prompt analysis, evidence correlation and targeted containment if confirmed"
+  },
+  {
+   "severity": "Low",
+   "meaning": "Weak signal, blocked attempt, policy event or likely benign anomaly",
+   "examples": "Single rejected scan; false-positive- prone detection; authorised rare behaviour",
+   "posture": "Validate, document, tune if needed and close when evidence supports"
+  }
+ ],
+ "alertStates": [
+  {
+   "term": "Detected",
+   "definition": "The security control observed activity that matched logic. This alone does not tell you whether execution or compromise occurred."
+  },
+  {
+   "term": "Blocked",
+   "definition": "The control reports prevention of a specific action. Validate whether an earlier or alternate action succeeded and whether follow-on activity exists."
+  },
+  {
+   "term": "Allowed",
+   "definition": "A network or application control permitted traffic. Allowed traffic is not proof of compromise; correlate endpoint, identity and application outcomes."
+  },
+  {
+   "term": "Quarantined",
+   "definition": "A file/object was moved or neutralised. Check whether it executed before quarantine or whether persistence/secondary components remain."
+  },
+  {
+   "term": "Failed authentication",
+   "definition": "The login did not succeed. Determine whether another source, protocol or later attempt succeeded."
+  },
+  {
+   "term": "Successful authentication",
+   "definition": "The credentials/session were accepted. The investigation must still establish whether the user, device and subsequent actions were legitimate."
+  },
+  {
+   "term": "True positive",
+   "definition": "The detection correctly identified the behaviour it was designed to detect. A true-positive alert may still represent a blocked attempt rather than a successful incident."
+  },
+  {
+   "term": "Incident",
+   "definition": "Unauthorised activity has meaningful security impact or requires coordinated response. Use organisational classification criteria rather than equating every true positive with an incident."
+  }
+ ],
+ "appendixA": [
+  {
+   "label": "Identity / IAM",
+   "text": "Sign-in events, MFA results, device identity, Conditional Access, password changes, authentication-method changes, token/session IDs, privileged role/group changes."
+  },
+  {
+   "label": "Endpoint / EDR",
+   "text": "Process creation, process ancestry, command lines, file creation/modification, module loads, registry, services, scheduled tasks, network connections, detections and response actions."
+  },
+  {
+   "label": "Email / Collaboration",
+   "text": "Original headers, message trace, sender authentication, URL clicks, attachment hashes, mailbox rules, forwarding, Teams/Slack-like message audit and file identifiers."
+  },
+  {
+   "label": "Network / Firewall / Proxy",
+   "text": "Source/destination, ports, action, bytes, URL/host, TLS metadata, NAT, VPN-assigned IPs, internal segmentation and egress."
+  },
+  {
+   "label": "DNS",
+   "text": "Query name/type, response, resolver, client, NXDOMAIN, prevalence, first/last seen, process attribution where available."
+  },
+  {
+   "label": "Cloud / SaaS",
+   "text": "Audit/API events, application consent, service-principal activity, file/mail access, sharing, role/policy changes, tokens/keys and resource configuration."
+  },
+  {
+   "label": "Web / Application / API",
+   "text": "WAF action, raw request, request ID, app errors, session/authentication, server logs, API gateway and database queries."
+  },
+  {
+   "label": "Data / DLP / Repositories",
+   "text": "File labels, shares, source code, database objects, exports, archive creation, USB/cloud transfer and external sharing."
+  },
+  {
+   "label": "Business context",
+   "text": "Asset criticality, owner, change ticket, maintenance, travel/on-call, HR lifecycle, approved software and incident history."
+  }
+ ],
+ "appendixB": [
+  "What exact observable caused the alert, and what did the control do with it?",
+  "What is the earliest related activity I can prove?",
+  "What is the latest related activity I can prove?",
+  "Which user, host, application, IP, domain, process, file, session and business service are in scope?",
+  "Did the suspicious action succeed, or was it only attempted?",
+  "What independent telemetry corroborates the conclusion?",
+  "Was there execution, persistence, credential access, privilege change, discovery, lateral movement, collection, C2, exfiltration or impact?",
+  "Could an approved business process or security tool explain the activity?",
+  "What lookback period and log retention did I actually search?",
+  "Do telemetry gaps prevent a high-confidence conclusion?",
+  "Did I search for campaign-wide matches beyond the original user/host?",
+  "What containment actions were completed, by whom and at what time?",
+  "Have compromised sessions/tokens/credentials been invalidated rather than only passwords changed?",
+  "If a host was compromised, is it trustworthy enough to remediate in place or should it be rebuilt?",
+  "If cloud/OAuth persistence existed, was it removed independently of the user password?",
+  "If data may have been accessed, have I identified the owner, sensitivity and transfer evidence?",
+  "If the alert was blocked, is there evidence of an alternate path or prior successful activity?",
+  "What detection/logging gap did this investigation expose?",
+  "What residual risk remains after closure?",
+  "Can another analyst read my notes and reproduce the reasoning without asking me what I meant?"
+ ],
+ "appendixC": [
+  {
+   "label": "Authentication burst",
+   "text": "Group authentication events by source_ip, user and 5-15 minute window; compare failure count, success-after-failure and number of distinct accounts. New-source successful login: Find successful authentication where source ASN/device/geo has not appeared for the user in a historical baseline window; enrich with MFA and session details. Office-to-script chain: Search process creation where parent is an Office application and child is a script interpreter, shell, LOLBin or downloader; correlate network and file creation."
+  },
+  {
+   "label": "Rare domain after execution",
+   "text": "Join process/network/DNS data for domains first seen in the environment shortly after a new or suspicious process starts."
+  },
+  {
+   "label": "Remote execution",
+   "text": "Correlate privileged authentication with service creation, WinRM/WMI/RDP/SMB activity on a second host within a narrow time window."
+  },
+  {
+   "label": "Mass file activity",
+   "text": "Find hosts/users with sudden increases in file rename/write/delete volume; correlate extension changes, process owner, SMB sessions and recovery-inhibition commands."
+  },
+  {
+   "label": "Cloud mass download",
+   "text": "Aggregate cloud file-download events by user/session/device; compare count/bytes/sites with prior baseline and identity risk."
+  },
+  {
+   "label": "External forwarding",
+   "text": "Search mailbox/tenant audit for new forwarding addresses, inbox rules or transport rules targeting external domains; correlate with sign-in anomalies."
+  },
+  {
+   "label": "Potential DNS tunnel",
+   "text": "Aggregate query length, subdomain uniqueness, entropy, record types and volume by client and parent domain; identify owning process and outbound follow-on."
+  },
+  {
+   "label": "Web exploit success",
+   "text": "Join WAF request ID/time/source with application errors, server process/file telemetry and database/API events; only elevate to compromise when downstream effects support it."
+  },
+  {
+   "label": "Note",
+   "text": "These are conceptual search patterns, not copy-paste vendor syntax. Adapt field names, retention and correlation keys to the"
+  }
+ ],
+ "appendixD": [
+  {
+   "label": "Incident / Alert ID",
+   "text": "Unique reference and related cases."
+  },
+  {
+   "label": "Date / Time",
+   "text": "Detection time, first malicious activity, containment and closure."
+  },
+  {
+   "label": "Detection source",
+   "text": "Rule/use case, product, reporter and raw event reference."
+  },
+  {
+   "label": "Affected entities",
+   "text": "Users, hosts, applications, IPs, domains, files, cloud resources and business services."
+  },
+  {
+   "label": "Summary",
+   "text": "Two to five sentences explaining what happened and current impact."
+  },
+  {
+   "label": "Timeline",
+   "text": "Chronological evidence with source and timestamp."
+  },
+  {
+   "label": "Investigation performed",
+   "text": "Queries, pivots, systems checked, lookback period and evidence collected."
+  },
+  {
+   "label": "Findings",
+   "text": "Confirmed actions, attempted actions, not-observed activity and confidence level."
+  },
+  {
+   "label": "MITRE ATT&CK",
+   "text": "Relevant tactics/techniques based on observed behaviour."
+  },
+  {
+   "label": "Containment / Recovery",
+   "text": "Actions, owners, timestamps and validation."
+  },
+  {
+   "label": "Business / Data impact",
+   "text": "Availability, integrity, confidentiality, customer/regulatory implications."
+  },
+  {
+   "label": "Root cause / Initial access",
+   "text": "Known, suspected or unknown, with evidence."
+  },
+  {
+   "label": "Closure rationale",
+   "text": "Why it is safe to close or transition to monitoring/recovery."
+  },
+  {
+   "label": "Lessons / Detection improvements",
+   "text": "Rule tuning, logging gaps, control improvements, threat hunt and follow-up actions."
+  }
+ ],
+ "appendixE": [
+  "NIST SP 800-61 Rev. 3: Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile. Final April 2025. https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+  "NIST Cybersecurity Framework 2.0: Cybersecurity risk-management framework used by SP 800-61 Rev. 3. https://www.nist.gov/cyberframework",
+  "MITRE ATT&CK Enterprise: Enterprise tactics, techniques and detection knowledge. This playbook was prepared against ATT&CK v19-era structure; v19.2 was released 6 August 2026. https://attack.mitre.org/",
+  "CISA #StopRansomware Guide: Defensive ransomware guidance including logging, centralised monitoring, containment and recovery considerations. https://www.cisa.gov/stopransomware/ransomware-guide"
+ ]
+}

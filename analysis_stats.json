@@ -1,0 +1,1078 @@
+{
+ "source": "raw guide/100 SOC Investigation Scenarios.pdf",
+ "pages": 207,
+ "scenarios": [
+  {
+   "num": 1,
+   "title": "Spoofed Microsoft 365 Password Reset",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1078",
+    "T1566.002"
+   ],
+   "startPage": 6
+  },
+  {
+   "num": 2,
+   "title": "Invoice HTML Attachment Credential Phish",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1056",
+    "T1566.001"
+   ],
+   "startPage": 8
+  },
+  {
+   "num": 3,
+   "title": "OAuth Consent Phishing via Shared Document",
+   "severity": "High",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1098",
+    "T1528"
+   ],
+   "startPage": 10
+  },
+  {
+   "num": 4,
+   "title": "QR Code Phishing from Corporate Email",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1056",
+    "T1566.002"
+   ],
+   "startPage": 12
+  },
+  {
+   "num": 5,
+   "title": "BEC Reply-Chain Hijack",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1078",
+    "T1566"
+   ],
+   "startPage": 14
+  },
+  {
+   "num": 6,
+   "title": "Internal Spearphish from Compromised Mailbox",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1078",
+    "T1534"
+   ],
+   "startPage": 16
+  },
+  {
+   "num": 7,
+   "title": "Fake Voicemail Notification",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1566.002",
+    "T1621"
+   ],
+   "startPage": 18
+  },
+  {
+   "num": 8,
+   "title": "MFA Expiry Portal Phish",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1098.005",
+    "T1566.002"
+   ],
+   "startPage": 20
+  },
+  {
+   "num": 9,
+   "title": "Recruitment ZIP with LNK",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1204.002",
+    "T1566.001"
+   ],
+   "startPage": 22
+  },
+  {
+   "num": 10,
+   "title": "CEO Gift-Card Request",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1566",
+    "T1656"
+   ],
+   "startPage": 24
+  },
+  {
+   "num": 11,
+   "title": "Vendor Bank-Detail Change Fraud",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1078",
+    "T1566"
+   ],
+   "startPage": 26
+  },
+  {
+   "num": 12,
+   "title": "Malicious Teams Message from Trusted User",
+   "severity": "Medium",
+   "category": "phishing",
+   "mitreFocus": [
+    "T1204",
+    "T1534"
+   ],
+   "startPage": 28
+  },
+  {
+   "num": 13,
+   "title": "EDR Blocks Unknown Executable",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1105",
+    "T1204"
+   ],
+   "startPage": 30
+  },
+  {
+   "num": 14,
+   "title": "Word Spawns Suspicious Child Process",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1059",
+    "T1204.002"
+   ],
+   "startPage": 32
+  },
+  {
+   "num": 15,
+   "title": "LNK Launches Script Interpreter",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1059",
+    "T1204.002"
+   ],
+   "startPage": 34
+  },
+  {
+   "num": 16,
+   "title": "Signed Binary Proxy Execution",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1218"
+   ],
+   "startPage": 36
+  },
+  {
+   "num": 17,
+   "title": "Browser Downloaded Infostealer",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1041",
+    "T1555"
+   ],
+   "startPage": 38
+  },
+  {
+   "num": 18,
+   "title": "USB-Delivered Malware",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1091"
+   ],
+   "startPage": 40
+  },
+  {
+   "num": 19,
+   "title": "Scheduled Task Persistence",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1053.005"
+   ],
+   "startPage": 42
+  },
+  {
+   "num": 20,
+   "title": "Suspicious Windows Service",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1543.003"
+   ],
+   "startPage": 44
+  },
+  {
+   "num": 21,
+   "title": "DLL Sideloading Pattern",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1574.002"
+   ],
+   "startPage": 46
+  },
+  {
+   "num": 22,
+   "title": "MSHTA Executes Remote Content",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1218.005"
+   ],
+   "startPage": 48
+  },
+  {
+   "num": 23,
+   "title": "Archive Extraction Followed by Payload",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1140",
+    "T1204.002"
+   ],
+   "startPage": 50
+  },
+  {
+   "num": 24,
+   "title": "C2 Beacon After Quarantined File",
+   "severity": "High",
+   "category": "malware",
+   "mitreFocus": [
+    "T1071",
+    "T1547"
+   ],
+   "startPage": 52
+  },
+  {
+   "num": 25,
+   "title": "Password Spray Against Cloud Accounts",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1110.003"
+   ],
+   "startPage": 54
+  },
+  {
+   "num": 26,
+   "title": "Brute Force Followed by Success",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1078",
+    "T1110"
+   ],
+   "startPage": 56
+  },
+  {
+   "num": 27,
+   "title": "Impossible Travel Sign-In",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1078"
+   ],
+   "startPage": 58
+  },
+  {
+   "num": 28,
+   "title": "MFA Fatigue / Push Bombing",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1621"
+   ],
+   "startPage": 60
+  },
+  {
+   "num": 29,
+   "title": "New MFA Method Added",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1098"
+   ],
+   "startPage": 62
+  },
+  {
+   "num": 30,
+   "title": "Mailbox Rules After Account Takeover",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1098",
+    "T1114"
+   ],
+   "startPage": 64
+  },
+  {
+   "num": 31,
+   "title": "Service Account Interactive Logon",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1078.002"
+   ],
+   "startPage": 66
+  },
+  {
+   "num": 32,
+   "title": "Dormant Account Reactivated",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1078"
+   ],
+   "startPage": 68
+  },
+  {
+   "num": 33,
+   "title": "Privileged Admin Login from New Host",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1078",
+    "T1484"
+   ],
+   "startPage": 70
+  },
+  {
+   "num": 34,
+   "title": "Kerberoasting Indicators",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1558.003"
+   ],
+   "startPage": 72
+  },
+  {
+   "num": 35,
+   "title": "Suspicious LSASS Access",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1003.001"
+   ],
+   "startPage": 74
+  },
+  {
+   "num": 36,
+   "title": "Leaked Corporate Credentials Found Externally",
+   "severity": "High",
+   "category": "credential-abuse",
+   "mitreFocus": [
+    "T1078",
+    "T1589"
+   ],
+   "startPage": 76
+  },
+  {
+   "num": 37,
+   "title": "VPN Login from Unusual Country",
+   "severity": "Medium",
+   "category": "vpn",
+   "mitreFocus": [
+    "T1078",
+    "T1133"
+   ],
+   "startPage": 78
+  },
+  {
+   "num": 38,
+   "title": "Concurrent VPN Sessions",
+   "severity": "Medium",
+   "category": "vpn",
+   "mitreFocus": [
+    "T1133"
+   ],
+   "startPage": 80
+  },
+  {
+   "num": 39,
+   "title": "VPN Success After Password Spray",
+   "severity": "High",
+   "category": "vpn",
+   "mitreFocus": [
+    "T1110.003",
+    "T1133"
+   ],
+   "startPage": 82
+  },
+  {
+   "num": 40,
+   "title": "Legacy VPN Protocol Use",
+   "severity": "Medium",
+   "category": "vpn",
+   "mitreFocus": [
+    "T1133"
+   ],
+   "startPage": 84
+  },
+  {
+   "num": 41,
+   "title": "Impossible Travel Across VPN and SaaS",
+   "severity": "Medium",
+   "category": "vpn",
+   "mitreFocus": [
+    "T1078",
+    "T1133"
+   ],
+   "startPage": 86
+  },
+  {
+   "num": 42,
+   "title": "High Data Transfer Over VPN",
+   "severity": "Medium",
+   "category": "vpn",
+   "mitreFocus": [
+    "T1048"
+   ],
+   "startPage": 88
+  },
+  {
+   "num": 43,
+   "title": "Privileged VPN Login After Hours",
+   "severity": "High",
+   "category": "vpn",
+   "mitreFocus": [
+    "T1078",
+    "T1133"
+   ],
+   "startPage": 90
+  },
+  {
+   "num": 44,
+   "title": "VPN from Hosting / Anonymous Infrastructure",
+   "severity": "Medium",
+   "category": "vpn",
+   "mitreFocus": [
+    "T1090",
+    "T1133"
+   ],
+   "startPage": 92
+  },
+  {
+   "num": 45,
+   "title": "Domain Generation Algorithm Pattern",
+   "severity": "Medium",
+   "category": "dns",
+   "mitreFocus": [
+    "T1568.002"
+   ],
+   "startPage": 94
+  },
+  {
+   "num": 46,
+   "title": "Possible DNS Tunnelling",
+   "severity": "Medium",
+   "category": "dns",
+   "mitreFocus": [
+    "T1071.004"
+   ],
+   "startPage": 96
+  },
+  {
+   "num": 47,
+   "title": "Newly Registered Domain Contact",
+   "severity": "Medium",
+   "category": "dns",
+   "mitreFocus": [
+    "T1071.001",
+    "T1583.001"
+   ],
+   "startPage": 98
+  },
+  {
+   "num": 48,
+   "title": "Dynamic DNS Service Usage",
+   "severity": "Medium",
+   "category": "dns",
+   "mitreFocus": [
+    "T1568"
+   ],
+   "startPage": 100
+  },
+  {
+   "num": 49,
+   "title": "Repeated NXDOMAIN Burst",
+   "severity": "Medium",
+   "category": "dns",
+   "mitreFocus": [
+    "T1568.002"
+   ],
+   "startPage": 102
+  },
+  {
+   "num": 50,
+   "title": "DNS to Known C2 Domain",
+   "severity": "Medium",
+   "category": "dns",
+   "mitreFocus": [
+    "T1071.004",
+    "T1102"
+   ],
+   "startPage": 104
+  },
+  {
+   "num": 51,
+   "title": "Rare Domain After Office Process",
+   "severity": "Medium",
+   "category": "dns",
+   "mitreFocus": [
+    "T1071.001",
+    "T1204.002"
+   ],
+   "startPage": 106
+  },
+  {
+   "num": 52,
+   "title": "Unexpected DNS-over-HTTPS Process",
+   "severity": "Medium",
+   "category": "dns",
+   "mitreFocus": [
+    "T1071.004",
+    "T1090"
+   ],
+   "startPage": 108
+  },
+  {
+   "num": 53,
+   "title": "Encoded PowerShell Command",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1027",
+    "T1059.001"
+   ],
+   "startPage": 110
+  },
+  {
+   "num": 54,
+   "title": "PowerShell Download Cradle",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1059.001",
+    "T1105"
+   ],
+   "startPage": 112
+  },
+  {
+   "num": 55,
+   "title": "Hidden Window and Execution-Policy Bypass",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1027",
+    "T1059.001"
+   ],
+   "startPage": 114
+  },
+  {
+   "num": 56,
+   "title": "Base64 Decode Followed by Execution",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1059.001",
+    "T1140"
+   ],
+   "startPage": 116
+  },
+  {
+   "num": 57,
+   "title": "PowerShell Adds Security Exclusion",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1562.001"
+   ],
+   "startPage": 118
+  },
+  {
+   "num": 58,
+   "title": "PowerShell Creates Scheduled Task",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1053.005",
+    "T1059.001"
+   ],
+   "startPage": 120
+  },
+  {
+   "num": 59,
+   "title": "Remote PowerShell / WinRM Activity",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1021.006"
+   ],
+   "startPage": 122
+  },
+  {
+   "num": 60,
+   "title": "Office Launches PowerShell",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1059.001",
+    "T1204.002"
+   ],
+   "startPage": 124
+  },
+  {
+   "num": 61,
+   "title": "Invoke-Expression on Downloaded Content",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1027",
+    "T1059.001"
+   ],
+   "startPage": 126
+  },
+  {
+   "num": 62,
+   "title": "PowerShell Stages Data for Exfiltration",
+   "severity": "Medium",
+   "category": "powershell",
+   "mitreFocus": [
+    "T1041",
+    "T1560"
+   ],
+   "startPage": 128
+  },
+  {
+   "num": 63,
+   "title": "Mass File Rename and Encryption Pattern",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1486"
+   ],
+   "startPage": 130
+  },
+  {
+   "num": 64,
+   "title": "Shadow Copy Deletion Before Impact",
+   "severity": "High",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1490"
+   ],
+   "startPage": 132
+  },
+  {
+   "num": 65,
+   "title": "Backup Services Stopped",
+   "severity": "High",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1490",
+    "T1562.001"
+   ],
+   "startPage": 134
+  },
+  {
+   "num": 66,
+   "title": "SMB Lateral Movement Before Encryption",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1021.002",
+    "T1486"
+   ],
+   "startPage": 136
+  },
+  {
+   "num": 67,
+   "title": "PsExec-Style Ransomware Propagation",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1021.002",
+    "T1569.002"
+   ],
+   "startPage": 138
+  },
+  {
+   "num": 68,
+   "title": "RDP Intrusion Followed by Encryption",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1021.001",
+    "T1486"
+   ],
+   "startPage": 140
+  },
+  {
+   "num": 69,
+   "title": "Domain Admin Compromise in Ransomware Case",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1078",
+    "T1484"
+   ],
+   "startPage": 142
+  },
+  {
+   "num": 70,
+   "title": "Large Data Staging Before Encryption",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1530",
+    "T1560"
+   ],
+   "startPage": 144
+  },
+  {
+   "num": 71,
+   "title": "Exfiltration to Cloud Storage Before Ransomware",
+   "severity": "High",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1567.002"
+   ],
+   "startPage": 146
+  },
+  {
+   "num": 72,
+   "title": "Safe Mode Reboot Preceding Encryption",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1486",
+    "T1562.009"
+   ],
+   "startPage": 148
+  },
+  {
+   "num": 73,
+   "title": "Virtualisation Host Ransomware Indicators",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1486",
+    "T1490"
+   ],
+   "startPage": 150
+  },
+  {
+   "num": 74,
+   "title": "Ransom Note Found but No Encryption Observed",
+   "severity": "Critical",
+   "category": "ransomware",
+   "mitreFocus": [
+    "T1486",
+    "T1491"
+   ],
+   "startPage": 152
+  },
+  {
+   "num": 75,
+   "title": "Microsoft 365 Risky Sign-In with Data Access",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1078.004"
+   ],
+   "startPage": 154
+  },
+  {
+   "num": 76,
+   "title": "Malicious OAuth Application Consent",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1098",
+    "T1528"
+   ],
+   "startPage": 156
+  },
+  {
+   "num": 77,
+   "title": "Mass SharePoint/OneDrive Download",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1530"
+   ],
+   "startPage": 158
+  },
+  {
+   "num": 78,
+   "title": "External Mail Forwarding Rule",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1098",
+    "T1114"
+   ],
+   "startPage": 160
+  },
+  {
+   "num": 79,
+   "title": "Privileged Cloud Role Assignment",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1069",
+    "T1098"
+   ],
+   "startPage": 162
+  },
+  {
+   "num": 80,
+   "title": "AWS Access Key Used from New Infrastructure",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1078.004"
+   ],
+   "startPage": 164
+  },
+  {
+   "num": 81,
+   "title": "Cloud Storage Made Public",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1222",
+    "T1530"
+   ],
+   "startPage": 166
+  },
+  {
+   "num": 82,
+   "title": "Service Principal Credential Added",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1098.001"
+   ],
+   "startPage": 168
+  },
+  {
+   "num": 83,
+   "title": "Unmanaged Device Accesses Sensitive SaaS",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1078.004"
+   ],
+   "startPage": 170
+  },
+  {
+   "num": 84,
+   "title": "Session Cookie / Token Reuse",
+   "severity": "High",
+   "category": "cloud",
+   "mitreFocus": [
+    "T1539",
+    "T1550"
+   ],
+   "startPage": 172
+  },
+  {
+   "num": 85,
+   "title": "Mass Copy to Removable Media",
+   "severity": "Medium",
+   "category": "insider",
+   "mitreFocus": [
+    "T1052"
+   ],
+   "startPage": 174
+  },
+  {
+   "num": 86,
+   "title": "Upload to Personal Cloud Storage",
+   "severity": "Medium",
+   "category": "insider",
+   "mitreFocus": [
+    "T1567.002"
+   ],
+   "startPage": 176
+  },
+  {
+   "num": 87,
+   "title": "Departing Employee Repository Clone",
+   "severity": "Medium",
+   "category": "insider",
+   "mitreFocus": [
+    "T1213"
+   ],
+   "startPage": 178
+  },
+  {
+   "num": 88,
+   "title": "Unusual Privileged Database Queries",
+   "severity": "High",
+   "category": "insider",
+   "mitreFocus": [
+    "T1213"
+   ],
+   "startPage": 180
+  },
+  {
+   "num": 89,
+   "title": "Mailbox Export / eDiscovery Activity",
+   "severity": "Medium",
+   "category": "insider",
+   "mitreFocus": [
+    "T1114"
+   ],
+   "startPage": 182
+  },
+  {
+   "num": 90,
+   "title": "After-Hours Source Code Archive",
+   "severity": "Medium",
+   "category": "insider",
+   "mitreFocus": [
+    "T1560"
+   ],
+   "startPage": 184
+  },
+  {
+   "num": 91,
+   "title": "Repeated Security Policy Bypass Attempts",
+   "severity": "Medium",
+   "category": "insider",
+   "mitreFocus": [
+    "T1562.001"
+   ],
+   "startPage": 186
+  },
+  {
+   "num": 92,
+   "title": "Legitimate Access Used to Share Sensitive Data",
+   "severity": "Medium",
+   "category": "insider",
+   "mitreFocus": [
+    "T1530"
+   ],
+   "startPage": 188
+  },
+  {
+   "num": 93,
+   "title": "SQL Injection Attempt Against Internet Portal",
+   "severity": "Medium",
+   "category": "web",
+   "mitreFocus": [
+    "T1190"
+   ],
+   "startPage": 190
+  },
+  {
+   "num": 94,
+   "title": "Potential Web Shell on Server",
+   "severity": "High",
+   "category": "web",
+   "mitreFocus": [
+    "T1505.003"
+   ],
+   "startPage": 192
+  },
+  {
+   "num": 95,
+   "title": "Directory Traversal Attempt",
+   "severity": "Medium",
+   "category": "web",
+   "mitreFocus": [
+    "T1190"
+   ],
+   "startPage": 194
+  },
+  {
+   "num": 96,
+   "title": "Credential Stuffing Against Customer Portal",
+   "severity": "Medium",
+   "category": "web",
+   "mitreFocus": [
+    "T1110.004"
+   ],
+   "startPage": 196
+  },
+  {
+   "num": 97,
+   "title": "API Token Abuse",
+   "severity": "Medium",
+   "category": "web",
+   "mitreFocus": [
+    "T1078"
+   ],
+   "startPage": 198
+  },
+  {
+   "num": 98,
+   "title": "Suspicious File Upload to Web Application",
+   "severity": "Medium",
+   "category": "web",
+   "mitreFocus": [
+    "T1105",
+    "T1190"
+   ],
+   "startPage": 200
+  },
+  {
+   "num": 99,
+   "title": "Server-Side Request Forgery Attempt",
+   "severity": "Medium",
+   "category": "web",
+   "mitreFocus": [
+    "T1190"
+   ],
+   "startPage": 202
+  },
+  {
+   "num": 100,
+   "title": "WAF Block Followed by Host Compromise Indicators",
+   "severity": "Medium",
+   "category": "web",
+   "mitreFocus": [
+    "T1059",
+    "T1190"
+   ],
+   "startPage": 204
+  }
+ ],
+ "by_category": {
+  "phishing": 12,
+  "malware": 12,
+  "credential-abuse": 12,
+  "vpn": 8,
+  "dns": 8,
+  "powershell": 10,
+  "ransomware": 12,
+  "cloud": 10,
+  "insider": 8,
+  "web": 8
+ },
+ "by_severity": {
+  "Medium": 49,
+  "High": 42,
+  "Critical": 9
+ }
+}

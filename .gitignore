@@ -1,0 +1,54 @@
+# ---- Node / pnpm / build ----
+node_modules/
+dist/
+*.tsbuildinfo
+
+# ---- Logs & debug files ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Environment & secrets ----
+.env
+.env.*
+!.env.example
+*.local
+
+# ---- pnpm cache created inside the workspace under sandboxed installs ----
+.pnpm-store/
+
+# ---- Python (tools/extract.py) ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# ---- Test / coverage output ----
+coverage/
+htmlcov/
+
+# ---- Editor / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+~$*
+
+# ---- Local review backups ----
+soc-review-state.json
+
+# ---- Regenerable artifacts (keep the data JSON, ignore the report) ----
+app/public/data/qa-report.txt

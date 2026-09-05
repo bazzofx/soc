@@ -1,0 +1,94 @@
+{
+ "categories": [
+  {
+   "id": "phishing",
+   "name": "Phishing & Social Engineering",
+   "tagline": "Email, collaboration, user interaction and identity pivots",
+   "primaryEvidence": "original message/header, message trace, click telemetry, proxy/browser, identity, collaboration audit, EDR.",
+   "first": 1,
+   "last": 12,
+   "count": 12
+  },
+  {
+   "id": "malware",
+   "name": "Malware & Endpoint Compromise",
+   "tagline": "EDR, process trees, file telemetry, persistence and C2",
+   "primaryEvidence": "EDR process/file/module/network telemetry, software inventory, proxy/DNS, persistence artefacts and",
+   "first": 13,
+   "last": 24,
+   "count": 12
+  },
+  {
+   "id": "credential-abuse",
+   "name": "Credential Abuse & Identity Attacks",
+   "tagline": "Authentication, MFA, privilege, tokens and account takeover",
+   "primaryEvidence": "identity sign-ins, MFA/audit logs, Conditional Access, VPN, mailbox/cloud audit, endpoint credential-theft",
+   "first": 25,
+   "last": 36,
+   "count": 12
+  },
+  {
+   "id": "vpn",
+   "name": "VPN & Remote Access",
+   "tagline": "Remote access, device posture, assigned IPs and internal pivots",
+   "primaryEvidence": "VPN concentrator, MFA/device posture, assigned tunnel IP, firewall/DNS, server authentication and user",
+   "first": 37,
+   "last": 44,
+   "count": 8
+  },
+  {
+   "id": "dns",
+   "name": "DNS & Network Resolution",
+   "tagline": "Resolver behaviour, rare domains, tunnelling and C2",
+   "primaryEvidence": "recursive DNS/passive DNS, EDR process attribution, proxy/firewall/TLS, threat intelligence and endpoint",
+   "first": 45,
+   "last": 52,
+   "count": 8
+  },
+  {
+   "id": "powershell",
+   "name": "PowerShell & Script Abuse",
+   "tagline": "Command-line analysis, script logging and living-off-the-land behaviour",
+   "primaryEvidence": "command line, PowerShell operational/script block logging, AMSI/EDR, process tree,",
+   "first": 53,
+   "last": 62,
+   "count": 10
+  },
+  {
+   "id": "ransomware",
+   "name": "Ransomware & Extortion",
+   "tagline": "Precursor detection, containment, lateral movement, exfiltration and impact",
+   "primaryEvidence": "EDR, authentication, remote execution, file-server events, backup/virtualisation logs, network transfer,",
+   "first": 63,
+   "last": 74,
+   "count": 12
+  },
+  {
+   "id": "cloud",
+   "name": "Cloud & SaaS",
+   "tagline": "Cloud audit, OAuth, tokens, storage, roles and session compromise",
+   "primaryEvidence": "cloud audit, identity/session/token data, OAuth/service principal records, storage/mailbox logs, privileged",
+   "first": 75,
+   "last": 84,
+   "count": 10
+  },
+  {
+   "id": "insider",
+   "name": "Insider Risk & Data Misuse",
+   "tagline": "Legitimate access, DLP, intent-neutral evidence and governance",
+   "primaryEvidence": "DLP, file/repository/database audit, endpoint transfer, USB/cloud/email activity, access approvals and",
+   "first": 85,
+   "last": 92,
+   "count": 8
+  },
+  {
+   "id": "web",
+   "name": "Web & Application Attacks",
+   "tagline": "WAF, application, API, server and database correlation",
+   "primaryEvidence": "CDN/WAF/reverse proxy, application/API/database logs, EDR/FIM on servers, cloud metadata and",
+   "first": 93,
+   "last": 100,
+   "count": 8
+  }
+ ]
+}

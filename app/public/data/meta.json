@@ -1,0 +1,32 @@
+{
+ "title": "100 SOC Investigation Scenarios",
+ "subtitle": "A Practical Step-by-Step Playbook for Security Operations",
+ "edition": "2026 Edition",
+ "sourceFile": "100 SOC Investigation Scenarios.pdf",
+ "sourcePages": 207,
+ "sourceSha256": "57312675c16689bdf204cadf00471c9082e182f9602af3565de7f4e14771eae7",
+ "generatedAt": "2026-09-05T21:10:11+00:00",
+ "counts": {
+  "scenarios": 100,
+  "categories": 10,
+  "techniques": 68,
+  "bySeverity": {
+   "Medium": 49,
+   "High": 42,
+   "Critical": 9
+  },
+  "byCategory": {
+   "phishing": 12,
+   "malware": 12,
+   "credential-abuse": 12,
+   "vpn": 8,
+   "dns": 8,
+   "powershell": 10,
+   "ransomware": 12,
+   "cloud": 10,
+   "insider": 8,
+   "web": 8
+  }
+ },
+ "totalWords": 28796
+}

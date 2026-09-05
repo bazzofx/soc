@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOC Scenario Reviewer — 100 Investigation Playbooks</title>
+    <meta
+      name="description"
+      content="Searchable, reviewable library of the 100 SOC Investigation Scenarios playbook with MITRE ATT&CK index and reference material."
+    />
+    <script>
+      // apply saved theme before first paint to avoid flashing
+      try {
+        var t = localStorage.getItem("soc-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
