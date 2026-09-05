@@ -1,8 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SearchBox } from "../components/SearchBox";
-import { ErrorBox, Loading, ProgressRing, SeverityBadge } from "../components/ui";
+import { ErrorBox, Loading } from "../components/ui";
 import { useCategories, useScenarios } from "../lib/data";
-import { useReview } from "../lib/review";
 import { SEVERITY_COLOR, SEVERITY_ORDER } from "../lib/format";
 
 const EXAMPLES = [
@@ -17,8 +16,6 @@ const EXAMPLES = [
 export function HomePage() {
   const scenarios = useScenarios();
   const categories = useCategories();
-  const nav = useNavigate();
-  const statusMap = useReview((s) => s.status);
 
   if (scenarios.error || categories.error) {
     return <ErrorBox error={scenarios.error ?? categories.error!} />;
@@ -27,16 +24,6 @@ export function HomePage() {
 
   const all = scenarios.data.scenarios;
   const cats = categories.data.categories;
-
-  const sevCounts = SEVERITY_ORDER.map((s) => ({
-    sev: s,
-    n: all.filter((x) => x.severity === s).length,
-  }));
-  const done = all.filter((s) => {
-    const st = statusMap[s.code];
-    return st === "reviewed" || st === "flagged";
-  }).length;
-  const unreviewed = all.find((s) => !statusMap[s.code] || statusMap[s.code] === "unreviewed");
 
   function sevMix(catFirst: number, catLast: number) {
     const list = all.filter((s) => s.num >= catFirst && s.num <= catLast);
@@ -67,7 +54,7 @@ export function HomePage() {
               <SearchBox
                 variant="big"
                 autoFocus
-                placeholder="Press F to fSearch every scenario… e.g. QR phish, LSASS, MFA fatigue, T1078"
+                placeholder="Press F to search every scenario… e.g. QR phish, LSASS, MFA fatigue, T1078"
               />
               <div className="mt-3 flex flex-wrap items-center gap-1.5">
                 <span className="cyber-tag">Try</span>
@@ -81,48 +68,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-{/* ------------------------------------ CURRENTLY SECTION IS DISABLE ------------------------------------------ START */}
-      {/* quick stats */}
-      {/* <section className="mx-auto mt-6 grid max-w-4xl gap-3 sm:grid-cols-3">
-        <div className="card flex items-center gap-4 p-4">
-          <ProgressRing value={done / all.length} />
-          <div>
-            <p className="text-xl font-extrabold">{done}<span className="text-sm font-normal" style={{ color: "var(--tx3)" }}>/{all.length}</span></p>
-            <p className="text-xs" style={{ color: "var(--tx2)" }}>reviewed or flagged</p>
-          </div>
-        </div>
-        <div className="card p-4">
-          <p className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--tx3)" }}>
-            Severity
-          </p>
-          <div className="mt-2 flex flex-col gap-1">
-            {sevCounts.map(({ sev, n }) => (
-              <div key={sev} className="flex items-center gap-2 text-sm">
-                <SeverityBadge severity={sev} />
-                <span style={{ color: "var(--tx2)" }}>{n}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="card flex flex-col justify-between gap-3 p-4">
-          <p className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--tx3)" }}>
-            Study
-          </p>
-          <button className="btn" onClick={() => unreviewed && nav(`/scenarios/${unreviewed.code}`)}>
-            ▶ Next unreviewed{unreviewed ? ` — ${unreviewed.code}` : ""}
-          </button>
-          <button
-            className="btn btn--ghost"
-            onClick={() => {
-              const pick = all[Math.floor(Math.random() * all.length)];
-              nav(`/scenarios/${pick.code}`);
-            }}
-          >
-            🎲 Random scenario
-          </button>
-        </div>
-      </section> */}
-{/* ------------------------------------ CURRENTLY SECTION IS DISABLE ------------------------------------------ END */}
       {/* categories */}
       <section className="mt-10">
         <div className="mb-3 flex items-baseline justify-between">

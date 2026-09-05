@@ -267,19 +267,36 @@ mark {
   color: var(--tx2);
   background: var(--bg2);
 }
+/* ------------------------------------------------------------------ */
+/* Red cyber scrollbars                                               */
+/* ------------------------------------------------------------------ */
+* {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #ff2e3b var(--bg);
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(7, 7, 9, 0.55);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff2e3b, #a3121b);
+  border-radius: 8px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5a63;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* slimmer variant for inner panels / dropdowns */
 .scrollbar-thin::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 8px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 /* status dots for review workflow */
