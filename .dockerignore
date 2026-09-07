@@ -1,0 +1,14 @@
+# Exclude everything not needed for the image build to keep the context small
+.git
+**/.git
+.pnpm-store
+**/node_modules
+**/dist
+**/.vite
+**/*.log
+
+# host-only source material (not needed inside the container)
+raw guide
+reference
+analysis_stats.json
+soc-review-state.json

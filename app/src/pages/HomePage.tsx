@@ -44,7 +44,7 @@ export function HomePage() {
           <div className="max-w-2xl">
             <p className="cyber-kicker mb-4">Security Operations · 2026 Edition</p>
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl">
-              SOC Investigation Scenarios
+              100 SOC Investigation Scenarios
             </h1>
             <p className="mt-3 max-w-xl text-sm leading-relaxed sm:text-base" style={{ color: "var(--tx2)" }}>
               Search and review the full blue-team playbook — phishing to ransomware,

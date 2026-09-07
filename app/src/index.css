@@ -333,13 +333,13 @@ mark {
   justify-content: center;
   width: 1.7rem;
   height: 1.7rem;
-  border-radius: 999px;
+  border-radius: 99px;
   flex: none;
-  background: var(--accent-dim);
+  /* background: var(--accent-dim); */
   border: 1px solid rgba(255, 46, 59, 0.35);
   color: var(--accent);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: .8rem;
+  font-weight: 300;
   font-family: var(--font-display);
 }
 

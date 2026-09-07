@@ -7,18 +7,18 @@ appendices.
 
 Everything runs locally in the browser: all scenario content is converted from the source
 PDF into JSON (`app/public/data/`) and searched instantly on the client with MiniSearch —
-no backend, no accounts, no telemetry. Mark scenarios as reviewed, keep notes, track
+no backend, no accounts, no telemetry. Mark scenarios as reviewed/flagged, track
 progress across all 100, and export/import your progress as JSON.
 
 ## Features
 
-- 🔍 **Instant full-text search** over all 100 scenarios (press `/`) with snippets & highlighting
+- 🔍 **Instant full-text search** over all 100 scenarios (press `F` for the search popup) with snippets & highlighting
 - 🗂 **Filters**: category, severity, MITRE technique, review status — state lives in the URL
 - 📖 **Structured scenario pages**: steps, pivots, decision-evidence table, containment/closure, copy-as-Markdown, print
-- ✅ **Review workflow**: statuses, notes, progress dashboard, export/import
+- ✅ **Review workflow**: statuses, progress dashboard, export/import
 - 🎯 **MITRE ATT&CK index**: which playbooks exercise each technique (+ attack.mitre.org links)
 - 📚 **Method, Severity Matrix, Alert-State Vocabulary, Appendices A–E**
-- 🌙 Dark/light theme, keyboard navigation
+- 🎌 **Cyber Samurai theme** (dark, red accent, glass panels, samurai banner hero); keyboard navigation
 
 ## Requirements
 
@@ -45,6 +45,25 @@ pnpm preview      # serve the built app locally
 ```
 
 `dist/` is fully static — copy it to any web server, or open `dist/index.html` directly.
+
+### Deploy with Docker
+
+A multi-stage `Dockerfile` builds the app (Node) and serves it with nginx (gzip,
+asset caching, SPA fallback):
+
+```bash
+# from the project root
+docker build -t soc-scenario-reviewer .
+
+docker run -d --name soc-reviewer -p 8080:80 soc-scenario-reviewer
+# → http://localhost:8080   (map any host port you like)
+```
+
+Notes:
+- The image only needs `app/` (source + committed data in `app/public/data/`);
+  everything else is excluded via `.dockerignore`.
+- Rebuild the image whenever you regenerate `app/public/data/*.json` or change source.
+- To stop/remove: `docker stop soc-reviewer && docker rm soc-reviewer`.
 
 ### Run the checks
 

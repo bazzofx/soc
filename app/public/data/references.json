@@ -176,11 +176,11 @@
   },
   {
    "label": "Date / Time",
-   "text": "Detection time, first malicious activity, containment and closure."
+   "text": "Detection time of first malicious activity"
   },
   {
    "label": "Detection source",
-   "text": "Rule/use case, product, reporter and raw event reference."
+   "text": "Product name raw event reference."
   },
   {
    "label": "Affected entities",

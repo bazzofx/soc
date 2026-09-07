@@ -194,7 +194,7 @@ export function ReportPage() {
       <section className="card mb-4 p-5">
         <h2 className="h2 mb-1">1 · Incident metadata</h2>
         <p className="mb-4 text-xs" style={{ color: "var(--tx3)" }}>Identification and detection context.</p>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid grid-cols-3 gap-3">
           {meta
             .filter((f) => ["Incident / Alert ID", "Date / Time", "Detection source"].includes(f.label))
             .map((f) => (
