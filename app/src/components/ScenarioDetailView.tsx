@@ -163,9 +163,13 @@ export function ScenarioDetailView({
       {/* steps */}
       <section id="steps" className="card mb-4 p-5">
         <h2 className="h2 mb-3">Step-by-step investigation</h2>
-        <ol className="flex flex-col gap-2.5">
+        <ol className="flex flex-col">
           {scenario.steps.map((step, i) => (
-            <li key={i} className="flex gap-3">
+            <li
+              key={i}
+              className="flex gap-3 border-t py-3 first:border-t-0"
+              style={{ borderColor: "var(--line)" }}
+            >
               <span className="step-num">{i + 1}</span>
               <p className="text-sm leading-relaxed">{step}</p>
             </li>
