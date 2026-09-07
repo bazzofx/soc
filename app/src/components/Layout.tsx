@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { SearchBox } from "./SearchBox";
+import { triggerBlackHole } from "../lib/blackhole";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -185,8 +186,13 @@ export function Layout() {
         </div>
       )}
 
-      {/* staticMind mascot — a bit of personality on every page */}
-      <div className="mascot-wrap fixed bottom-3 right-3 z-20">
+      {/* staticMind mascot — a bit of personality on every page (click = black hole) */}
+      <div
+        className="mascot-wrap fixed bottom-3 right-3 z-20 cursor-pointer"
+        onClick={() => void triggerBlackHole()}
+        role="button"
+        aria-label="Run the black hole animation"
+      >
         <span
           className="glitch-tooltip pointer-events-none absolute bottom-full right-0 mb-2 block w-max max-w-[240px] rounded-lg border px-3 py-2 text-[0.72rem] leading-snug"
           style={{ borderColor: "#2a2a2e", boxShadow: "0 0 24px rgba(0,0,0,0.6)" }}
