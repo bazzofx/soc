@@ -184,6 +184,23 @@ export function Layout() {
           </div>
         </div>
       )}
+
+      {/* staticMind mascot — a bit of personality on every page */}
+      <div className="mascot-wrap fixed bottom-3 right-3 z-20">
+        <span
+          className="glitch-tooltip pointer-events-none absolute bottom-full right-0 mb-2 block w-max max-w-[240px] rounded-lg border px-3 py-2 text-[0.72rem] leading-snug"
+          style={{ borderColor: "#2a2a2e", boxShadow: "0 0 24px rgba(0,0,0,0.6)" }}
+        >
+          “The quieter I become, the more I can hear.”
+        </span>
+        <img
+          src="theme/staticMind.gif"
+          alt=""
+          aria-hidden="true"
+          className="h-16 w-16 rounded-2xl object-cover opacity-80 transition-opacity hover:opacity-100"
+          style={{ border: "1px solid var(--line2)", boxShadow: "0 0 18px rgba(255, 46, 59, 0.25)" }}
+        />
+      </div>
     </div>
   );
 }

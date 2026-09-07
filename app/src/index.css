@@ -427,6 +427,51 @@ mark {
   border: 1px solid rgba(255, 46, 59, 0.25);
 }
 
+/* ---- staticMind hover tooltip (glitch effect) ---- */
+@keyframes glitch-shift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(1px, -1px) skewX(-2deg);
+  }
+  40% {
+    transform: translate(-1px, 1px);
+  }
+  60% {
+    transform: translate(1px, 1px) skewX(1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px);
+  }
+}
+.glitch-tooltip {
+  background: #000;
+  color: #c9ccd4;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.02em;
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.35),
+    1px 0 rgba(255, 46, 59, 0.55),
+    -1px 0 rgba(0, 229, 255, 0.45);
+  animation: glitch-shift 1.6s steps(2) infinite;
+}
+.mascot-wrap:hover .glitch-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mascot-wrap .glitch-tooltip {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .glitch-tooltip {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
