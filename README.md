@@ -46,24 +46,48 @@ pnpm preview      # serve the built app locally
 
 `dist/` is fully static — copy it to any web server, or open `dist/index.html` directly.
 
-### Deploy with Docker
+### Deploy with Docker (build the site, serve it with your own nginx)
 
-A multi-stage `Dockerfile` builds the app (Node) and serves it with nginx (gzip,
-asset caching, SPA fallback):
+The image contains **no web server**. It builds the app and copies the compiled
+static files into a directory on your host, which your existing nginx serves:
 
 ```bash
-# from the project root
-docker build -t soc-scenario-reviewer .
+# 1. build the static-file image (from the project root)
+docker build -t soc-bootcamp .
 
-docker run -d --name soc-reviewer -p 8080:80 soc-scenario-reviewer
-# → http://localhost:8080   (map any host port you like)
+# 2. export the built site into the host web root (creates/populates it)
+docker run --rm -v /var/www/soc-bootcamp:/out soc-bootcamp
+```
+
+> The `-t soc-bootcamp` tag is optional — untagged means `soc-bootcamp:latest`.
+> Add a version if you like (`-t soc-bootcamp:v1.2`) and use that name in step 2.
+
+Then point your host nginx at `/var/www/soc-bootcamp` — a ready-to-adapt server
+block is in `deploy/soc_bootcamp.conf`:
+
+```bash
+sudo cp deploy/soc_bootcamp.conf /etc/nginx/conf.d/soc_bootcamp.conf
+sudo nano /etc/nginx/conf.d/soc_bootcamp.conf     # set server_name (and listen)
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+Redeploys are just: `docker build …` then re-run the export container — nginx keeps
+serving, no restart needed (new hashed asset names are picked up automatically).
+
+**Alternative without running a container** (BuildKit):
+
+```bash
+docker build --target static --output type=local,dest=./deploy-out .
+# → files land in ./deploy-out/srv/soc-app  (copy that to your web root)
 ```
 
 Notes:
 - The image only needs `app/` (source + committed data in `app/public/data/`);
   everything else is excluded via `.dockerignore`.
-- Rebuild the image whenever you regenerate `app/public/data/*.json` or change source.
-- To stop/remove: `docker stop soc-reviewer && docker rm soc-reviewer`.
+- If `/var/www/soc-bootcamp` is root-owned, run the export with `sudo` (or
+  `sudo mkdir -p /var/www/soc-bootcamp && sudo chown $USER /var/www/soc-bootcamp` once).
+- If you export into a directory that already has content, the copy adds/overwrites
+  files. Clean it first (`sudo rm -rf /var/www/soc-bootcamp/*`) for a pristine deploy.
 
 ### Run the checks
 
